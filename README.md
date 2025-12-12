@@ -146,48 +146,23 @@ This repository includes all visualizations from the analysis:
 
 ## Business Relevance
 This analysis mirrors real-world platform needs:
+* Identifying core users who keep communication alive
+* Discovering natural role groups for UI personalization
+* Understanding spread of information for announcement planning
+* Testing resilience for system reliability
+* Understanding relationship patterns to improve engagement algorithms
 
-Identifying core users who keep communication alive
+This isn’t just graph science, this is how you design smarter digital platforms.
 
-Discovering natural role groups for UI personalization
+## Key Takeaways (What This Project Proves About My Skillset)
 
-Understanding spread of information for announcement planning
+- I can run large-scale graph analysis — 4,039 nodes
+- I can connect graph theory to real-world business meaning
+- I can perform advanced structural modeling
+- I understand information flow, hierarchy & resilience in complex systems
+- I write clear, strong reports that non-technical people understand
+- I operate at a senior data analyst / network analyst level
 
-Testing resilience for system reliability
-
-Understanding relationship patterns to improve engagement algorithms
-
-This isn’t just graph science —
-This is how you design smarter digital platforms.
-
-📁 Repository Structure
-📦 facebook-ego-analysis
-│
-├── data/
-│   └── facebook_combined.txt.gz
-│
-├── notebooks/
-│   └── 01_full_graph_analysis.ipynb
-│
-├── visuals/
-│   ├── community_plot.png
-│   ├── brokers.png
-│   ├── core_periphery.png
-│   ├── resilience_curve.png
-│   ├── diffusion_cascade.png
-│   └── clustering_histogram.png
-│
-└── README.md   <- you are here
-
-🎯 Key Takeaways (What This Project Proves About My Skillset)
-
-✔ I can run large-scale graph analysis — 4,039 nodes
-✔ I can connect graph theory to real-world business meaning
-✔ I can perform advanced structural modeling
-✔ I understand information flow, hierarchy & resilience in complex systems
-✔ I write clear, strong reports that non-technical people understand
-✔ I operate at a senior data analyst / network analyst level
-
-📬 Contact
+## Contact
 
 If you want to collaborate or explore the analysis deeper, feel free to reach out.
