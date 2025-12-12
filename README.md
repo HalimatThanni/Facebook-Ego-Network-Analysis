@@ -36,8 +36,14 @@ Using Louvain Modularity, I discovered:
 * Community sizes ranged from 19 → 548 nodes, showing both micro-groups and mega-clusters.
 
 Interpretation:
-These communities behave like natural "role groups" — just like students, teachers, admins, parents inside a school platform.
+These communities behave like natural "role groups", just like students, teachers, admins, parents inside a school platform.
 The structure strongly supports circle-based communication.
+
+<img width="407" height="350" alt="Louvain Community Structure" src="https://github.com/user-attachments/assets/6784dd52-0ca1-4984-a44b-99f8a9060af5" />
+
+fig 1 - Louvain Community Structure
+
+
 
 ### RQ2 — Influence Dynamics & Brokerage
 
@@ -51,107 +57,94 @@ Using Degree, Betweenness, Articulation Points & Multi-community bridging, I ide
   * Act as communication “gateways”
 
 Interpretation:
-These nodes behave like cross-department communicators — e.g., school administrators connecting multiple role-groups.
+These nodes behave like cross-department communicators, e.g., school administrators connecting multiple role-groups.
+
+<img width="522" height="358" alt="Visual Bridge Analysis Scatterplot" src="https://github.com/user-attachments/assets/97cd4356-7418-4659-8b7a-7430a2219e13" />
+
+Fig 2: Degree vs. Betweenness with Broker Labels
+
 
 ### RQ3 — Hierarchical Core–Periphery Architecture
 Using k-core decomposition, I uncovered:
 * Maximum core index: 115
 * 158 nodes in the top core
+* These “inner-circle” users form the strategic communication spine
+* Outer nodes become increasingly peripheral and less influential
 
-These “inner-circle” users form the strategic communication spine
-
-Outer nodes become increasingly peripheral and less influential
-
-📌 Implication:
+Implication:
 This network has a strong hierarchical organization, similar to how a digital school ecosystem has:
 core admins → active teachers → students → occasional users.
 
-🛡 5. RQ4 — Network Resilience & Failure Simulation
+<img width="404" height="368" alt="Core Periphery" src="https://github.com/user-attachments/assets/99d6d958-c2ee-48db-80f0-152daa6e9a51" />
 
-I simulated a targeted attack — removing the top 200 most influential hubs.
+Fig 3: K-core Shell Distribution Plot
 
+
+### RQ4 — Network Resilience & Failure Simulation
+I simulated a targeted attack, removing the top 200 most influential hubs.
 Result after removal:
+* Original LCC: 4,039 nodes
+* After attack: 3,750 nodes
+* Network stayed operational, but weaker
+* Shows high resilience, thanks to redundant connections
 
-Original LCC: 4,039 nodes
-
-After attack: 3,750 nodes
-
-Network stayed operational, but weaker
-
-Shows high resilience, thanks to redundant connections
-
-📌 Interpretation:
-The network is robust — losing even the biggest influencers won’t break communication.
+Interpretation:
+The network is robust, losing even the biggest influencers won’t break communication.
 This is valuable for platform design and risk assessment.
 
-👥 6. RQ5 — Homophily, Clustering & Triadic Closure
+<img width="272" height="281" alt="Network Resistance and Fragmentation Curve" src="https://github.com/user-attachments/assets/fb912d33-457b-47ac-82b4-4315185fa2d6" />
 
+Fig 4: LCC Size vs. Removed Hubs & Number of Components vs. Removed Hubs
+
+
+### RQ5 — Homophily, Clustering & Triadic Closure
 Key findings:
+* Global Clustering = 0.6055 → extremely high
+* Local clustering peaks at 1.0
+* Total triangles: 1,612,010
+* Community assortativity = 0.9557 → exceptionally strong
 
-Global Clustering = 0.6055 → extremely high
-
-Local clustering peaks at 1.0
-
-Total triangles: 1,612,010
-
-Community assortativity = 0.9557 → exceptionally strong
-
-📌 Interpretation:
+Interpretation:
 People cluster tightly.
 Friends-of-friends become friends.
 Communities remain closed and strongly bonded.
 This is exactly how school groups, study teams, and parent circles behave.
 
-📣 7. RQ6 — Information Diffusion Potential
-
+### RQ6 — Information Diffusion Potential
 Using BFS simulations & global distance metrics:
+* Information from ego-node travels to entire network in 6 steps
+* Average distance from ego-node: 2.83
+* Global diameter: 8
+* Global Efficiency = 0.3066
+* Cascade simulation shows rapid first-wave spread (1,742 users at step 3)
 
-Information from ego-node travels to entire network in 6 steps
-
-Average distance from ego-node: 2.83
-
-Global diameter: 8
-
-Global Efficiency = 0.3066
-
-Cascade simulation shows rapid first-wave spread (1,742 users at step 3)
-
-📌 Interpretation:
+Interpretation:
 This network is excellent for fast broadcast.
 Messages spread like wildfire — critical for school announcements, alerts, scheduling changes, etc.
 
-📊 Visual Artefacts Included
+<img width="578" height="356" alt="Information Cascade Spread" src="https://github.com/user-attachments/assets/154f3461-2aa9-47d4-b69a-8424e3a714ec" />
+
+Fig 5: Cascade Simulation Chart
+
+
+## Visual Artefacts Included
 
 This repository includes all visualizations from the analysis:
+* Louvain community structure plot (Fig 1)
+* Top brokers & bridge-node visualization (Fig 2)
+* k-core core-periphery radial graph (Fig 3)
+* Resilience decline curve & Cascade diffusion histogram (Fig 4)
+* All numerical data outputs: Cascade Simulation Chart (Fig 5)
 
-Louvain community structure plot
+## Tools & Technologies
+* Python (NetworkX, Pandas, NumPy, Matplotlib)
+* Louvain Community Detection
+* Centrality Measures (degree, betweenness, articulation)
+* Graph Simulations (BFS cascades, targeted attacks)
+* k-core decomposition
+* Statistic-based structural interpretation
 
-Top brokers & bridge-node visualization
-
-k-core core-periphery radial graph
-
-Resilience decline curve
-
-Cascade diffusion histogram
-
-All numerical data outputs
-
-🛠 Tools & Technologies
-
-Python (NetworkX, Pandas, NumPy, Matplotlib)
-
-Louvain Community Detection
-
-Centrality Measures (degree, betweenness, articulation)
-
-Graph Simulations (BFS cascades, targeted attacks)
-
-k-core decomposition
-
-Statistic-based structural interpretation
-
-🧩 Business Relevance: Mapping to the Open School Platform
-
+## Business Relevance
 This analysis mirrors real-world platform needs:
 
 Identifying core users who keep communication alive
